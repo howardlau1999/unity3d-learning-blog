@@ -27,7 +27,7 @@ url: "https://liuhaohua.com" # the base hostname & protocol for your site, e.g. 
 github_username:  howardlau1999
 
 # Build settings
-theme: jekyll-theme-slate
+theme: minima
 plugins:
   - jekyll-feed
 
