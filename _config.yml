@@ -18,11 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 服务计算
+title: 3D 游戏设计与编程
 email: howardlau1999@hotmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  服务计算作业博客
-baseurl: "/service-computing-blog" # the subpath of your site, e.g. /blog
+  3D 游戏设计与编程
+baseurl: "/unity3d-learning-blog" # the subpath of your site, e.g. /blog
 url: "https://liuhaohua.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  howardlau1999
 
