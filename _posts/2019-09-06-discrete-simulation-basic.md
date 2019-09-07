@@ -137,3 +137,31 @@ Unity 场景中所有实体的基类。
 [https://docs.unity3d.com/ScriptReference/Component.html](https://docs.unity3d.com/ScriptReference/Component.html)
 
 所有附加到 GameObject 上的对象的基类。在代码中从不直接创建 Component，而是将写好的脚本附加到 GameObject 上。
+
+用 UML 图表示三者的关系如下:
+
+![uml]({{ site.url }}{{ site.baseurl }}/assets/images/uml.png)
+
+下面来看看可视化编辑界面和 Unity API 的对应关系：
+
+![table]({{ site.url }}{{ site.baseurl }}/assets/images/table.png)
+
+关注右边的 Inspector 界面，从上到下分别是：
+
+- table 对象本身
+  - Name: 对象的名字
+  - Tag: 对象的标签 
+  - Layer: 对象所处层级
+- Transform
+  - Position: 位置坐标
+  - Rotation: 旋转角度，单位是度
+  - Scale: 缩放
+- Mesh Filter
+  - Mesh: 用来渲染的网格
+- Mesh Renderer
+  - 3D 模型的渲染器
+- Box Collider
+  - 用来碰撞检测，可以编辑碰撞检测器的形状
+- Material
+  - 渲染 3D 模型的材质
+  
