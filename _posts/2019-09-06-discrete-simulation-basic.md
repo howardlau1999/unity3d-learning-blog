@@ -124,16 +124,16 @@ public class InitBehaviour : MonoBehaviour
 
 [https://docs.unity3d.com/ScriptReference/GameObject.html](https://docs.unity3d.com/ScriptReference/GameObject.html)
 
-> Unity 场景中所有实体的基类。
+Unity 场景中所有实体的基类。
 
 ### Transform
 
 [https://docs.unity3d.com/ScriptReference/Transform.html](https://docs.unity3d.com/ScriptReference/Transform.html)
 
-> 一个对象的位置、旋转、缩放信息。场景里的每个对象都有一个 Transform 属性，用来存储和操作对象的位置、旋转、缩放。每个 Transform 都可以有一个父 Transform，这样就可以对对象继承地应用位置、旋转和缩放。在继承面板看到的就是继承关系。
+一个对象的位置、旋转、缩放信息。场景里的每个对象都有一个 Transform 属性，用来存储和操作对象的位置、旋转、缩放。每个 Transform 都可以有一个父 Transform，这样就可以对对象继承地应用位置、旋转和缩放。在继承面板看到的就是继承关系。
 
 ### Component
 
 [https://docs.unity3d.com/ScriptReference/Component.html](https://docs.unity3d.com/ScriptReference/Component.html)
 
-> 所有附加到 GameObject 上的对象的基类。在代码中从不直接创建 Component，而是将写好的脚本附加到 GameObject 上。
+所有附加到 GameObject 上的对象的基类。在代码中从不直接创建 Component，而是将写好的脚本附加到 GameObject 上。
