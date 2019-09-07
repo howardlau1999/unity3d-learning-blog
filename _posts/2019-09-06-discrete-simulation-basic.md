@@ -5,7 +5,7 @@ title:  "离散仿真引擎基础"
 
 ## 基本概念
 
-### GameObject
+### GameObjects
 
 在 Unity 中，`GameObject` 是一个个游戏对象，就像在 Java 等语言中 `new` 出来的对象一样。`GameObject` 是 Unity 中的基础的对象，构成了人物、道具、场景等等。是动态的资源，在运行时可能会动态创建很多 `GameObject` 或者改变不同 `GameObject` 的属性。
 
