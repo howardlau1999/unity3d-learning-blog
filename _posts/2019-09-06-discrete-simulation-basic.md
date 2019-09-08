@@ -165,3 +165,148 @@ Unity 场景中所有实体的基类。
 - Material
   - 渲染 3D 模型的材质
   
+## 对象的基本操作
+
+### 查找对象
+
+#### `GameObject.Find(string name)`
+
+查找对象有几种方法，第一种是使用 `GameObject.Find(string name)` 方法在继承层级中查找：
+
+```csharp
+public class InitBehaviour : MonoBehaviour
+{
+    private GameObject chair3;
+
+    void Start()
+    {
+        chair3 = GameObject.Find("table/chair3");
+    }
+
+    void Update()
+    {
+        chair3.GetComponent<Transform>().Rotate(new Vector3(.1f, 0, 0));
+    }
+}
+```
+
+![findobject]({{ site.url }}{{ site.baseurl }}/assets/images/findobject.png)
+
+可以看到启动后 `chair3` 旋转了起来。
+
+#### `GameObject.FindGameObjectsWithTag(string tag)`
+
+第二种是使用对象的标签来查找，可以先在 Inspector 窗口里给对象打 tag，然后用这个方法把带有指定 tag 的对象全部查找出来：
+
+```csharp
+public class InitBehaviour : MonoBehaviour
+{
+    private GameObject[] chairs;
+
+    void Start()
+    {
+        chairs = GameObject.FindGameObjectsWithTag("Chair");
+    }
+
+    void Update()
+    {
+        foreach (GameObject chair in chairs)
+        {
+            chair.GetComponent<Transform>().Rotate(new Vector3(.1f, 0, 0));
+        }
+    }
+}
+```
+
+![findobjectbytag]({{ site.url }}{{ site.baseurl }}/assets/images/findobjectbytag.png)
+
+可以看到椅子全部旋转了起来。
+
+### 添加子对象
+
+添加子对象其实是把一个对象的父亲设置为自己，至于这个子对象怎么来的可以有很多方法，这里演示一下使用 `GameObject.CreatePrimitive()` 方法创建一个子对象然后添加到 table 中：
+
+```csharp
+public class InitBehaviour : MonoBehaviour
+{
+    void Start()
+    {
+        GameObject chair5 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        chair5.name = "chair5";
+        chair5.transform.position = new Vector3(0f, 2f, 0f);
+        chair5.transform.localScale = new Vector3(1f, .1f, 1f);
+        chair5.transform.parent = this.transform;
+    }
+}
+```
+
+![child]({{ site.url }}{{ site.baseurl }}/assets/images/child.png)
+
+可以看到多了一个椅子。
+
+### 遍历对象树
+
+```csharp
+public class InitBehaviour : MonoBehaviour
+{
+    void TraverseTree(Transform root)
+    {
+        Queue<Transform> queue = new Queue<Transform>();
+        HashSet<Transform> visited = new HashSet<Transform>();
+        queue.Enqueue(root);
+        while (queue.Count != 0)
+        {
+            Transform cur = queue.Dequeue();
+            visited.Add(cur);
+            foreach (Transform child in cur)
+            {
+                if (!visited.Contains(child))
+                    queue.Enqueue(child);
+                Debug.Log(child.gameObject.name);
+            }
+        }
+    }
+
+    void Start()
+    {
+        TraverseTree(transform.root);
+        Debug.Log("Start");
+    }
+}
+```
+
+![traverse]({{ site.url }}{{ site.baseurl }}/assets/images/traverse.png)
+
+### 清除所有子对象
+
+```csharp
+public class InitBehaviour : MonoBehaviour
+{
+    void TraverseTree(Transform root)
+    {
+        Queue<Transform> queue = new Queue<Transform>();
+        HashSet<Transform> visited = new HashSet<Transform>();
+        queue.Enqueue(root);
+        while (queue.Count != 0)
+        {
+            Transform cur = queue.Dequeue();
+            visited.Add(cur);
+            foreach (Transform child in cur)
+            {
+                if (!visited.Contains(child))
+                    queue.Enqueue(child);
+                Debug.Log(child.gameObject.name);
+                Destroy(child.gameObject);
+            }
+        }
+    }
+
+    void Start()
+    {
+        TraverseTree(transform.root);
+        Debug.Log("Start");
+    }
+}
+```
+
+![destroy]({{ site.url }}{{ site.baseurl }}/assets/images/destroy.png)
