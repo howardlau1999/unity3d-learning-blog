@@ -310,3 +310,13 @@ public class InitBehaviour : MonoBehaviour
 ```
 
 ![destroy]({{ site.url }}{{ site.baseurl }}/assets/images/destroy.png)
+
+## 资源预设 (Prefabs) 与对象克隆 (clone)
+
+### 资源预设的好处
+
+预设可以看成是游戏对象的模板，包含了完整的组件和属性，可以实例化成游戏对象，使用预设可以很方便的统一修改所有游戏对象的属性，避免了重复劳动，节约游戏资源。
+
+### 预设与对象克隆的关系
+
+预设和实例化的对象有关联，预设改变了，对象也会跟着变。而克隆出来的对象之间是独立的，和被克隆的对象之间没有关系。
