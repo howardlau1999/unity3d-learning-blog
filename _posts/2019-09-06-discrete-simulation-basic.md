@@ -321,3 +321,22 @@ public class InitBehaviour : MonoBehaviour
 
 预设和实例化的对象有关联，预设改变了，对象也会跟着变。而克隆出来的对象之间是独立的，和被克隆的对象之间没有关系。
 
+### 实践用 Prefab 实例化一个桌子
+
+```csharp
+public class InitBehaviour : MonoBehaviour
+{
+    public GameObject tablePrefab;
+
+    void Start()
+    {
+        GameObject anotherTable = GameObject.Instantiate(tablePrefab);
+        anotherTable.transform.position = new Vector3(0f, 1f, 0f);
+        anotherTable.transform.parent = this.transform;
+    }
+}
+```
+
+![prefab]({{ site.url }}{{ site.baseurl }}/assets/images/prefab.png)
+
+可以看到运行之后多了一个 table。
