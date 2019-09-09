@@ -323,6 +323,8 @@ public class InitBehaviour : MonoBehaviour
 
 ### 实践用 Prefab 实例化一个桌子
 
+在脚本中添加一个 `tablePrefab` 属性，然后拖动 table 这个预制件到 Inspector 的属性中：
+
 ```csharp
 public class InitBehaviour : MonoBehaviour
 {
