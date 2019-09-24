@@ -1,6 +1,10 @@
-# Priests and Devils Unity Project
+# Priests and Devils v2 Unity Project
 
 Can you move all the three priests and three devils to the other side of river without leaving more devils than priests on any side at anytime?
+
+## SSAction
+
+In this version, the game uses `SSAction` to control movements of characters and boats and a `Judge` class to inform the controller of the end of the game additionally.
 
 ## Objects
 
@@ -21,4 +25,4 @@ Can you move all the three priests and three devils to the other side of river w
 
 Note that the boat is capable of only two passengers.
 
-You can watch demo video here: [https://www.bilibili.com/video/av68270911](https://www.bilibili.com/video/av68270911)
+You can watch demo video here: [https://www.bilibili.com/video/av68864097](https://www.bilibili.com/video/av68864097)
