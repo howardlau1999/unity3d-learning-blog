@@ -1,5 +1,7 @@
 #  血条（Health Bar）的预制设计 
 
+视频演示：https://www.bilibili.com/video/av76463329/
+
 - 分别使用 IMGUI 和 UGUI 实现
 - 使用 UGUI，血条是游戏对象的一个子元素，任何时候需要面对主摄像机
 - 分析两种实现的优缺点
